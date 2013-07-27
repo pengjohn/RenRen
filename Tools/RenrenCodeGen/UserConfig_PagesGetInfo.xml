@@ -1,0 +1,32 @@
+<XMLPagesGetInfo>
+  <Root xmlns="..0.">
+    <page_id xmlns="Number.page_id.0.page_id" />
+    <name xmlns="String.name.128.name" />
+    <headurl xmlns="String.headurl.256.headurl" />
+    <mainurl xmlns="String.mainurl.256.mainurl" />
+    <status xmlns="Array.status.0.status">
+      <status_id xmlns="Number.status_id.0.status_id" />
+      <content xmlns="String.content.1024.content" />
+      <time xmlns="String.time.64.time" />
+    </status>
+    <desc xmlns="String.desc.1024.desc" />
+    <base_info xmlns="Array.base_info.0.base_info">
+      <info xmlns="String.info.255.info" />
+      <key xmlns="Number.key.0.key" />
+      <value xmlns="String.value.64.value" />
+    </base_info>
+    <detail_info xmlns="Array.detail_info.0.detail_info">
+      <info xmlns="String.info.256.info" />
+      <key xmlns="Number.key.0.key" />
+      <value xmlns="Number.value.128.value" />
+    </detail_info>
+    <contact_info xmlns="Array.contact_info.0.contact_info">
+      <info xmlns="String.info.0.info" />
+      <key xmlns="Number.key.0.key" />
+      <value xmlns="String.value.0.value" />
+    </contact_info>
+    <albums_count xmlns="Number.albums_count.0.albums_count" />
+    <blogs_count xmlns="Number.blogs_count.0.blogs_count" />
+    <fans_count xmlns="Number.fans_count.0.fans_count" />
+  </Root>
+</XMLPagesGetInfo>

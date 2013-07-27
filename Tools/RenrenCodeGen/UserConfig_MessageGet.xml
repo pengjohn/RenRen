@@ -1,0 +1,11 @@
+<XMLMessageGet>
+  <Root xmlns="..0.">
+    <message xmlns="Array.message.0.message">
+      <uid xmlns="Number.uid.0.uid" />
+      <name xmlns="String.name.64.name" />
+      <head_url xmlns="String.head_url.255.head_url" />
+      <time xmlns="String.time.64.time" />
+      <content xmlns="String.content.1024.content" />
+    </message>
+  </Root>
+</XMLMessageGet>

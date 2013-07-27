@@ -1,0 +1,30 @@
+<XMLProfileGetInfoFriend>
+  <Root xmlns="..0.">
+    <uid xmlns="Short.uid.0.uid" />
+    <name xmlns="UEString.name.32.name" />
+    <headurl xmlns="UEString.headurl.256.headurl" />
+    <star xmlns="Short.star.0.star" />
+    <network_name xmlns="UEString.network_name.128.network_name" />
+    <base_info xmlns="Array.base_info.0.base_info">
+      <gender xmlns="UEString.gender.32.gender" />
+      <birth xmlns="Array.birth.0.birth">
+        <birth_year xmlns="UEString.birth_year.8.birth_year" />
+        <birth_month xmlns="Short.birth_month.0.birth_month" />
+        <birth_day xmlns="Short.birth_day.0.birth_day" />
+      </birth>
+      <hometown xmlns="Array.hometown.0.hometown">
+        <province xmlns="UEString.province.32.province" />
+        <city xmlns="UEString.city.32.city" />
+      </hometown>
+    </base_info>
+    <status xmlns="Array.status.0.status">
+      <content xmlns="UEString.content.256.content" />
+      <time xmlns="UEString.time.32.time" />
+    </status>
+    <visitors_count xmlns="Short.visitors_count.0.visitors_count" />
+    <blogs_count xmlns="Short.blogs_count.0.blogs_count" />
+    <albums_count xmlns="Short.albums_count.0.albums_count" />
+    <friends_count xmlns="Short.friends_count.0.friends_count" />
+    <guestbook_count xmlns="Short.guestbook_count.0.guestbook_count" />
+  </Root>
+</XMLProfileGetInfoFriend>

@@ -1,0 +1,11 @@
+<XMLStatusGet>
+  <Root xmlns="..0.">
+    <uid xmlns="Number.uid.0.uid" />
+    <status_id xmlns="Number.status_id.0.status_id" />
+    <time xmlns="String.time.64.time" />
+    <message xmlns="String.message.256.message" />
+    <comment_count xmlns="Number.comment_count.0.comment_count" />
+    <source_name xmlns="String.source_name.64.source_name" />
+    <source_url xmlns="String.source_url.256.source_url" />
+  </Root>
+</XMLStatusGet>

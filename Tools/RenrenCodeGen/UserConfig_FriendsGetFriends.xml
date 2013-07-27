@@ -1,0 +1,10 @@
+<XMLFriendsGetFriends>
+  <Root xmlns="..0.">
+    <id xmlns="Number.id.0.id" />
+    <name xmlns="UEString.name.64.name" />
+    <headurl xmlns="String.headurl.255.headurl" />
+    <tinyurl xmlns="String.tinyurl.255.tinyurl" />
+    <tinyurl_with_logo xmlns="String.tinyurl_with_logo.255.tinyurl_with_logo" />
+    <headurl_with_logo xmlns="String.headurl_with_logo.256.headurl_with_logo" />
+  </Root>
+</XMLFriendsGetFriends>

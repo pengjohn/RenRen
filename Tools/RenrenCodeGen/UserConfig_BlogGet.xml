@@ -1,0 +1,14 @@
+<XMLBlogGet>
+  <Root xmlns="..0.">
+    <uid xmlns="Number.uid.0.uid" />
+    <id xmlns="Number.id.0.id" />
+    <view_count xmlns="Number.view_count.0.view_count" />
+    <commemt_count xmlns="Number.commemt_count.0.comment_count" />
+    <visable xmlns="Number.visable.0.visable" />
+    <title xmlns="String.title.256.title" />
+    <content xmlns="String.content.1024.content" />
+    <name xmlns="String.name.32.name" />
+    <headurl xmlns="String.headurl.128.headurl" />
+    <time xmlns="String.time.64.time" />
+  </Root>
+</XMLBlogGet>

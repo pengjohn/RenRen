@@ -1,0 +1,14 @@
+<XMLGuestbookGet>
+  <Root xmlns="..0.">
+    <id xmlns="Number.id.0.id" />
+    <uid xmlns="Number.uid.0.uid" />
+    <name xmlns="String.name.128.name" />
+    <headurl xmlns="String.headurl.256.headurl" />
+    <content xmlns="String.content.1024.content" />
+    <time xmlns="String.time.64.time" />
+    <is_whisper xmlns="Number.is_whisper.0.is_whisper" />
+    <source xmlns="Number.source.0.source" />
+    <large_image xmlns="String.large_image.256.large_image" />
+    <small_image xmlns="String.small_image.256.small_image" />
+  </Root>
+</XMLGuestbookGet>

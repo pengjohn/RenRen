@@ -1,0 +1,10 @@
+<XMLUsersGetVisitors>
+  <Root xmlns="..0.">
+    <visitors xmlns="Array.visitors.0.visitors">
+      <uid xmlns="Number.uid.0.uid" />
+      <name xmlns="String.name.64.name" />
+      <time xmlns="String.time.64.time" />
+      <headurl xmlns="String.headurl.256.headurl" />
+    </visitors>
+  </Root>
+</XMLUsersGetVisitors>

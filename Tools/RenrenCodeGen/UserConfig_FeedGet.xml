@@ -1,0 +1,40 @@
+<XMLFeedGet>
+  <Root xmlns="..0.">
+    <post_id xmlns="Number.post_id.0.post_id" />
+    <source_id xmlns="Number.source_id.0.source_id" />
+    <feed_type xmlns="Number.feed_type.0.feed_type" />
+    <update_time xmlns="String.update_time.64.update_time" />
+    <actor_id xmlns="Number.actor_id.0.actor_id" />
+    <name xmlns="String.name.64.name" />
+    <actor_type xmlns="String.actor_type.32.actor_type" />
+    <headurl xmlns="String.headurl.256.headurl" />
+    <prefix xmlns="String.prefix.128.prefix" />
+    <message xmlns="String.message.256.message" />
+    <title xmlns="String.title.256.title" />
+    <href xmlns="String.href.256.href" />
+    <description xmlns="String.description.1024.description" />
+    <attachment xmlns="Array.attachment.0.attachment">
+      <href xmlns="String.href.256.href" />
+      <media_type xmlns="String.media_type.32.media_type" />
+      <src xmlns="String.src.256.src" />
+      <owner_id xmlns="Number.owner_id.0.owner_id" />
+      <media_id xmlns="Number.media_id.0.media_id" />
+    </attachment>
+    <comments xmlns="Array.comments.0.comments">
+      <count xmlns="Number.count.0.count" />
+      <comment xmlns="Array.comment.0.comment">
+        <uid xmlns="Number.uid.0.uid" />
+        <name xmlns="String.name.64.name" />
+        <headurl xmlns="String.headurl.256.headurl" />
+        <time xmlns="String.time.64.time" />
+        <comment_id xmlns="Number.comment_id.0.comment_id" />
+        <text xmlns="String.text.1024.text" />
+      </comment>
+    </comments>
+    <likes xmlns="Array.likes.0.likes">
+      <total_count xmlns="Number.total_count.0.total_count" />
+      <friend_count xmlns="Number.friend_count.0.friend_count" />
+      <user_like xmlns="Number.user_like.0.user_like" />
+    </likes>
+  </Root>
+</XMLFeedGet>

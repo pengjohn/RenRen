@@ -1,0 +1,14 @@
+<XMLPhotosGet>
+  <Root xmlns="..0.">
+    <pid xmlns="Number.pid.0.pid" />
+    <aid xmlns="Number.aid.0.aid" />
+    <uid xmlns="Number.uid.0.uid" />
+    <url_tiny xmlns="String.url_tiny.256.url_tiny" />
+    <url_head xmlns="String.url_head.256.url_head" />
+    <url_large xmlns="String.url_large.256.url_large" />
+    <caption xmlns="String.caption.256.caption" />
+    <time xmlns="String.time.64.time" />
+    <view_count xmlns="Number.view_count.0.view_count" />
+    <comment_count xmlns="Number.comment_count.0.comment_count" />
+  </Root>
+</XMLPhotosGet>

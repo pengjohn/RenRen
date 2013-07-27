@@ -1,0 +1,16 @@
+<XMLPhotosGetAlbums>
+  <Root xmlns="..0.">
+    <visable xmlns="Number.visable.0.visable" />
+    <comment_count xmlns="Number.comment_count.0.comment_count" />
+    <uid xmlns="Number.uid.0.uid" />
+    <update_time xmlns="String.update_time.64.update_time" />
+    <location xmlns="String.location.128.location" />
+    <description xmlns="String.description.256.description" />
+    <name xmlns="String.name.256.name" />
+    <create_time xmlns="String.create_time.64.create_time" />
+    <aid xmlns="Number.aid.0.aid" />
+    <type xmlns="Number.type.0.type" />
+    <url xmlns="String.url.256.url" />
+    <size xmlns="Number.size.0.size" />
+  </Root>
+</XMLPhotosGetAlbums>

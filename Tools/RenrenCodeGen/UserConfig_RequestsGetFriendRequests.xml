@@ -1,0 +1,11 @@
+<XMLRequestsGetFriendRequests>
+  <Root xmlns="..0.">
+    <total xmlns="Number.total.0.total" />
+    <guest xmlns="Array.guest.0.guest">
+      <uid xmlns="Number.uid.0.uid" />
+      <headurl xmlns="String.headurl.256.headurl" />
+      <name xmlns="String.name.255.name" />
+      <network xmlns="String.network.256.network" />
+    </guest>
+  </Root>
+</XMLRequestsGetFriendRequests>

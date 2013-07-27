@@ -1,0 +1,11 @@
+<XMLPagesGetList>
+  <Root xmlns="..0.">
+    <page_id xmlns="Number.page_id.0.page_id" />
+    <name xmlns="String.name.128.name" />
+    <headurl xmlns="String.headurl.255.headurl" />
+    <desc xmlns="String.desc.256.desc" />
+    <classification xmlns="String.classification.64.category_name" />
+    <fans_count xmlns="Number.fans_count.0.fans_count" />
+    <is_fan xmlns="Number.is_fan.0.is_fan" />
+  </Root>
+</XMLPagesGetList>

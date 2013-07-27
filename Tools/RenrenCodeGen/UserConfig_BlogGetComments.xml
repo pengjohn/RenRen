@@ -1,0 +1,11 @@
+<XMLBlogGetComments_Array>
+  <Root xmlns="..0.">
+    <id xmlns="Number.id.0.id" />
+    <uid xmlns="Number.uid.0.uid" />
+    <name xmlns="String.name.64.name" />
+    <headurl xmlns="String.headurl.256.headurl" />
+    <time xmlns="String.time.64.time" />
+    <content xmlns="String.content.1024.content" />
+    <is_whisper xmlns="Number.is_whisper.0.is_whisper" />
+  </Root>
+</XMLBlogGetComments_Array>

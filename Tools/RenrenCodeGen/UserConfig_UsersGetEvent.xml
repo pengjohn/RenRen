@@ -1,0 +1,8 @@
+<XMLUsersGetEvent>
+  <Root xmlns="..0.">
+    <friend_request_count xmlns="Number.friend_request_count.0.friend_request_count" />
+    <new_message_count xmlns="Number.new_message_count.0.new_message_count" />
+    <poke_count xmlns="Number.poke_count.0.poke_count" />
+    <fangle_count xmlns="Number.fangle_count.0.fangle_count" />
+  </Root>
+</XMLUsersGetEvent>

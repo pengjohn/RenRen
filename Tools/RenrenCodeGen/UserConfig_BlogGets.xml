@@ -1,0 +1,17 @@
+<XMLBlogGets>
+  <Root xmlns="..0.">
+    <blogs xmlns="Array.blogs.0.blogs">
+      <id xmlns="Number.id.0.id" />
+      <time xmlns="String.time.64.time" />
+      <cate xmlns="String.cate.32.cate" />
+      <title xmlns="String.title.128.title" />
+      <content xmlns="String.content.1024.content" />
+      <view_count xmlns="Number.view_count.0.view_count" />
+      <comment_count xmlns="Number.comment_count.0.comment_count" />
+      <visable xmlns="Number.visable.0.visable" />
+    </blogs>
+    <uid xmlns="Short.uid.0.uid" />
+    <total xmlns="String.total.32.total" />
+    <name xmlns="String.name.32.name" />
+  </Root>
+</XMLBlogGets>

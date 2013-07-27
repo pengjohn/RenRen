@@ -1,0 +1,9 @@
+<XMLInitialLogin>
+  <Root xmlns="..0.">
+    <session_key xmlns="String.session_key.64.session_key" />
+    <uid xmlns="Number.uid.8.uid" />
+    <error_code xmlns="Number.error_code.8.error_code" />
+    <error_msg xmlns="String.error_msg.128.error_msg" />
+    <ticket xmlns="String.ticket.64.ticket" />
+  </Root>
+</XMLInitialLogin>

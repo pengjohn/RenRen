@@ -1,0 +1,341 @@
+
+############################################################################
+#
+#   Makefile for building : App_RenRen_Arm.TMK3
+#   Created by TMK3_V2.3, please do not modify.
+#
+#############################################################################
+
+USE_IMAGEKIT=1
+USE_MTAPI=1
+
+TO_PROJECT_ROOT = ../../PRJ_TG3
+OUTPUT_FILENAME = libApp_RenRen.so
+
+include $(TO_PROJECT_ROOT)/MakeInclude/Makefile_Base_DynamicLib.ARM
+include $(TO_PROJECT_ROOT)/MakeInclude/Makefile_TOPS_Def.ARM
+
+DEFINES += -D__TCOM_SUPPORT__ \
+          -DLINUX -D_DEBUG -DNU_DEBUG -DSS_SHARED -D__TCOM_SUPPORT__
+INCLUDE_PATH += -I. -I./Res \
+               -I./ -I./Util -I./Forms -I./Res -I./RenRenAPI \
+               -I../ -I../Util -I../Forms -I../Res -I../RenRenAPI \
+               -I../../PRJ_TG3/Include -I../../PRJ_TG3/Include/MTAPI -I../../PRJ_TG3/Include/ThirdParty \
+               -I../../PRJ_TG3/Include/TCOM -I../../PRJ_TG3/TG3/Include -I../../PRJ_TG3/TG3/TG3_Implement \
+               -I../../PRJ_TG3/EOS_SYS -I../../PRJ_TG3/Common/SoftSupport \
+               -I../../PRJ_TG3/Common/ICU/Include -I../../PRJ_TG3/Include/ThirdParty/curl
+LIBS += -lcurl \
+       -lTG3_ControlsEx
+
+OBJECTS_DIR = ./Debug-ARM
+DESTDIR = $(TO_PROJECT_ROOT)/$(BIN_OUTPUT_DIR)
+TARGET = $(DESTDIR)/$(OUTPUT_FILENAME)
+
+DEL_FILE = rm -f
+MKDIR = mkdir -p
+
+first: all
+
+OBJECTS = \
+	$(OBJECTS_DIR)/App_RenRenApp.o \
+	$(OBJECTS_DIR)/App_RenRenEntry.o \
+	$(OBJECTS_DIR)/App_RenRenMainForm.o \
+	$(OBJECTS_DIR)/App_RenRenTcomRegist.o \
+	$(OBJECTS_DIR)/TG3AppDllEntry.o \
+	$(OBJECTS_DIR)/RenRenForm_About.o \
+	$(OBJECTS_DIR)/RenRenForm_BlogGet.o \
+	$(OBJECTS_DIR)/RenRenForm_BlogGetComments.o \
+	$(OBJECTS_DIR)/RenRenForm_BlogGets.o \
+	$(OBJECTS_DIR)/RenRenForm_Edit.o \
+	$(OBJECTS_DIR)/RenRenForm_FeedGet.o \
+	$(OBJECTS_DIR)/RenRenForm_FeedGetFangle.o \
+	$(OBJECTS_DIR)/RenRenForm_FriendsGetFriends.o \
+	$(OBJECTS_DIR)/RenRenForm_FriendsSearch.o \
+	$(OBJECTS_DIR)/RenRenForm_GuestbookGet.o \
+	$(OBJECTS_DIR)/RenRenForm_InitialLogin.o \
+	$(OBJECTS_DIR)/RenRenForm_MainMenu.o \
+	$(OBJECTS_DIR)/RenRenForm_MessageGet.o \
+	$(OBJECTS_DIR)/RenRenForm_MessageGets.o \
+	$(OBJECTS_DIR)/RenRenForm_PagesGetInfo.o \
+	$(OBJECTS_DIR)/RenRenForm_PagesGetList.o \
+	$(OBJECTS_DIR)/RenRenForm_PhotoDetail.o \
+	$(OBJECTS_DIR)/RenRenForm_PhotosGet.o \
+	$(OBJECTS_DIR)/RenRenForm_PhotosGetAlbums.o \
+	$(OBJECTS_DIR)/RenRenForm_PhotosGetComments.o \
+	$(OBJECTS_DIR)/RenRenForm_PhotoUploadInfo.o \
+	$(OBJECTS_DIR)/RenRenForm_RequestsGetFriendRequests.o \
+	$(OBJECTS_DIR)/RenRenForm_StatusGetComment.o \
+	$(OBJECTS_DIR)/RenRenForm_Test.o \
+	$(OBJECTS_DIR)/RenRenForm_UsersGetEvent.o \
+	$(OBJECTS_DIR)/RenRenForm_UsersGetInfo.o \
+	$(OBJECTS_DIR)/RenRenForm_WaitingBox.o \
+	$(OBJECTS_DIR)/RenRenForm_WebPanel.o \
+	$(OBJECTS_DIR)/RenRenAPI.o \
+	$(OBJECTS_DIR)/RenRenAPI_BlogGet.o \
+	$(OBJECTS_DIR)/RenRenAPI_BlogGetComments.o \
+	$(OBJECTS_DIR)/RenRenAPI_BlogGets.o \
+	$(OBJECTS_DIR)/RenRenAPI_dealFriendRequest.o \
+	$(OBJECTS_DIR)/RenRenAPI_FeedGet.o \
+	$(OBJECTS_DIR)/RenRenAPI_FeedGetFangle.o \
+	$(OBJECTS_DIR)/RenRenAPI_FriendsAreFriends.o \
+	$(OBJECTS_DIR)/RenRenAPI_FriendsGetFriends.o \
+	$(OBJECTS_DIR)/RenRenAPI_FriendsSearch.o \
+	$(OBJECTS_DIR)/RenRenAPI_GuestbookGet.o \
+	$(OBJECTS_DIR)/RenRenAPI_GuestbookPost.o \
+	$(OBJECTS_DIR)/RenRenAPI_InitialLogin.o \
+	$(OBJECTS_DIR)/RenRenAPI_MessageGet.o \
+	$(OBJECTS_DIR)/RenRenAPI_MessageGets.o \
+	$(OBJECTS_DIR)/RenRenAPI_PagesGetInfo.o \
+	$(OBJECTS_DIR)/RenRenAPI_PagesGetList.o \
+	$(OBJECTS_DIR)/RenRenAPI_PhotosGet.o \
+	$(OBJECTS_DIR)/RenRenAPI_PhotosGetAlbums.o \
+	$(OBJECTS_DIR)/RenRenAPI_PhotosGetComments.o \
+	$(OBJECTS_DIR)/RenRenAPI_Profile.o \
+	$(OBJECTS_DIR)/RenRenAPI_RequestsGetFriendRequests.o \
+	$(OBJECTS_DIR)/RenRenAPI_StatusGet.o \
+	$(OBJECTS_DIR)/RenRenAPI_StatusGetComment.o \
+	$(OBJECTS_DIR)/RenRenAPI_UsersGetEvent.o \
+	$(OBJECTS_DIR)/RenRenAPI_UsersGetInfo.o \
+	$(OBJECTS_DIR)/RenRenAPI_UsersGetVisitors.o \
+	$(OBJECTS_DIR)/RenRenAPICommon.o \
+	$(OBJECTS_DIR)/cJSON.o \
+	$(OBJECTS_DIR)/cUnixTime.o \
+	$(OBJECTS_DIR)/gui_common.o \
+	$(OBJECTS_DIR)/md5c.o \
+	$(OBJECTS_DIR)/OtherComm.o \
+	$(OBJECTS_DIR)/StrComm.o \
+	$(OBJECTS_DIR)/TDownload.o \
+	$(OBJECTS_DIR)/TFileDownloadMrg.o \
+	$(OBJECTS_DIR)/TGlobal.o \
+	$(OBJECTS_DIR)/TImgData.o
+
+ADD_OBJECTS += 
+
+$(OBJECTS_DIR) :
+	$(MKDIR) $(OBJECTS_DIR)
+
+$(DESTDIR) :
+	$(MKDIR) $(DESTDIR)
+
+all : $(OBJECTS_DIR) $(DESTDIR) $(TARGET)
+
+$(TARGET) : $(OBJECTS)
+	$(LINK) $(LINK_FLAGS) -o $(TARGET) $(SYS_OBJECTS) $(OBJECTS) $(ADD_OBJECTS) $(LIBS) $(SYS_LIBS)
+
+clean : 
+	-$(DEL_FILE) $(OBJECTS)
+	-$(DEL_FILE) $(TARGET)
+
+$(OBJECTS_DIR)/App_RenRenApp.o : ./App_RenRenApp.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/App_RenRenApp.o ./App_RenRenApp.cpp
+
+$(OBJECTS_DIR)/App_RenRenEntry.o : ./App_RenRenEntry.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/App_RenRenEntry.o ./App_RenRenEntry.cpp
+
+$(OBJECTS_DIR)/App_RenRenMainForm.o : ./App_RenRenMainForm.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/App_RenRenMainForm.o ./App_RenRenMainForm.cpp
+
+$(OBJECTS_DIR)/App_RenRenTcomRegist.o : ./App_RenRenTcomRegist.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/App_RenRenTcomRegist.o ./App_RenRenTcomRegist.cpp
+
+$(OBJECTS_DIR)/TG3AppDllEntry.o : ./TG3AppDllEntry.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/TG3AppDllEntry.o ./TG3AppDllEntry.cpp
+
+$(OBJECTS_DIR)/RenRenForm_About.o : ./Forms/RenRenForm_About.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_About.o ./Forms/RenRenForm_About.cpp
+
+$(OBJECTS_DIR)/RenRenForm_BlogGet.o : ./Forms/RenRenForm_BlogGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_BlogGet.o ./Forms/RenRenForm_BlogGet.cpp
+
+$(OBJECTS_DIR)/RenRenForm_BlogGetComments.o : ./Forms/RenRenForm_BlogGetComments.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_BlogGetComments.o ./Forms/RenRenForm_BlogGetComments.cpp
+
+$(OBJECTS_DIR)/RenRenForm_BlogGets.o : ./Forms/RenRenForm_BlogGets.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_BlogGets.o ./Forms/RenRenForm_BlogGets.cpp
+
+$(OBJECTS_DIR)/RenRenForm_Edit.o : ./Forms/RenRenForm_Edit.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_Edit.o ./Forms/RenRenForm_Edit.cpp
+
+$(OBJECTS_DIR)/RenRenForm_FeedGet.o : ./Forms/RenRenForm_FeedGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_FeedGet.o ./Forms/RenRenForm_FeedGet.cpp
+
+$(OBJECTS_DIR)/RenRenForm_FeedGetFangle.o : ./Forms/RenRenForm_FeedGetFangle.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_FeedGetFangle.o ./Forms/RenRenForm_FeedGetFangle.cpp
+
+$(OBJECTS_DIR)/RenRenForm_FriendsGetFriends.o : ./Forms/RenRenForm_FriendsGetFriends.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_FriendsGetFriends.o ./Forms/RenRenForm_FriendsGetFriends.cpp
+
+$(OBJECTS_DIR)/RenRenForm_FriendsSearch.o : ./Forms/RenRenForm_FriendsSearch.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_FriendsSearch.o ./Forms/RenRenForm_FriendsSearch.cpp
+
+$(OBJECTS_DIR)/RenRenForm_GuestbookGet.o : ./Forms/RenRenForm_GuestbookGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_GuestbookGet.o ./Forms/RenRenForm_GuestbookGet.cpp
+
+$(OBJECTS_DIR)/RenRenForm_InitialLogin.o : ./Forms/RenRenForm_InitialLogin.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_InitialLogin.o ./Forms/RenRenForm_InitialLogin.cpp
+
+$(OBJECTS_DIR)/RenRenForm_MainMenu.o : ./Forms/RenRenForm_MainMenu.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_MainMenu.o ./Forms/RenRenForm_MainMenu.cpp
+
+$(OBJECTS_DIR)/RenRenForm_MessageGet.o : ./Forms/RenRenForm_MessageGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_MessageGet.o ./Forms/RenRenForm_MessageGet.cpp
+
+$(OBJECTS_DIR)/RenRenForm_MessageGets.o : ./Forms/RenRenForm_MessageGets.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_MessageGets.o ./Forms/RenRenForm_MessageGets.cpp
+
+$(OBJECTS_DIR)/RenRenForm_PagesGetInfo.o : ./Forms/RenRenForm_PagesGetInfo.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_PagesGetInfo.o ./Forms/RenRenForm_PagesGetInfo.cpp
+
+$(OBJECTS_DIR)/RenRenForm_PagesGetList.o : ./Forms/RenRenForm_PagesGetList.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_PagesGetList.o ./Forms/RenRenForm_PagesGetList.cpp
+
+$(OBJECTS_DIR)/RenRenForm_PhotoDetail.o : ./Forms/RenRenForm_PhotoDetail.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_PhotoDetail.o ./Forms/RenRenForm_PhotoDetail.cpp
+
+$(OBJECTS_DIR)/RenRenForm_PhotosGet.o : ./Forms/RenRenForm_PhotosGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_PhotosGet.o ./Forms/RenRenForm_PhotosGet.cpp
+
+$(OBJECTS_DIR)/RenRenForm_PhotosGetAlbums.o : ./Forms/RenRenForm_PhotosGetAlbums.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_PhotosGetAlbums.o ./Forms/RenRenForm_PhotosGetAlbums.cpp
+
+$(OBJECTS_DIR)/RenRenForm_PhotosGetComments.o : ./Forms/RenRenForm_PhotosGetComments.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_PhotosGetComments.o ./Forms/RenRenForm_PhotosGetComments.cpp
+
+$(OBJECTS_DIR)/RenRenForm_PhotoUploadInfo.o : ./Forms/RenRenForm_PhotoUploadInfo.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_PhotoUploadInfo.o ./Forms/RenRenForm_PhotoUploadInfo.cpp
+
+$(OBJECTS_DIR)/RenRenForm_RequestsGetFriendRequests.o : ./Forms/RenRenForm_RequestsGetFriendRequests.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_RequestsGetFriendRequests.o ./Forms/RenRenForm_RequestsGetFriendRequests.cpp
+
+$(OBJECTS_DIR)/RenRenForm_StatusGetComment.o : ./Forms/RenRenForm_StatusGetComment.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_StatusGetComment.o ./Forms/RenRenForm_StatusGetComment.cpp
+
+$(OBJECTS_DIR)/RenRenForm_Test.o : ./Forms/RenRenForm_Test.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_Test.o ./Forms/RenRenForm_Test.cpp
+
+$(OBJECTS_DIR)/RenRenForm_UsersGetEvent.o : ./Forms/RenRenForm_UsersGetEvent.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_UsersGetEvent.o ./Forms/RenRenForm_UsersGetEvent.cpp
+
+$(OBJECTS_DIR)/RenRenForm_UsersGetInfo.o : ./Forms/RenRenForm_UsersGetInfo.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_UsersGetInfo.o ./Forms/RenRenForm_UsersGetInfo.cpp
+
+$(OBJECTS_DIR)/RenRenForm_WaitingBox.o : ./Forms/RenRenForm_WaitingBox.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_WaitingBox.o ./Forms/RenRenForm_WaitingBox.cpp
+
+$(OBJECTS_DIR)/RenRenForm_WebPanel.o : ./Forms/RenRenForm_WebPanel.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenForm_WebPanel.o ./Forms/RenRenForm_WebPanel.cpp
+
+$(OBJECTS_DIR)/RenRenAPI.o : ./RenRenAPI/RenRenAPI.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI.o ./RenRenAPI/RenRenAPI.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_BlogGet.o : ./RenRenAPI/RenRenAPI_BlogGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_BlogGet.o ./RenRenAPI/RenRenAPI_BlogGet.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_BlogGetComments.o : ./RenRenAPI/RenRenAPI_BlogGetComments.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_BlogGetComments.o ./RenRenAPI/RenRenAPI_BlogGetComments.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_BlogGets.o : ./RenRenAPI/RenRenAPI_BlogGets.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_BlogGets.o ./RenRenAPI/RenRenAPI_BlogGets.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_dealFriendRequest.o : ./RenRenAPI/RenRenAPI_dealFriendRequest.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_dealFriendRequest.o ./RenRenAPI/RenRenAPI_dealFriendRequest.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_FeedGet.o : ./RenRenAPI/RenRenAPI_FeedGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_FeedGet.o ./RenRenAPI/RenRenAPI_FeedGet.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_FeedGetFangle.o : ./RenRenAPI/RenRenAPI_FeedGetFangle.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_FeedGetFangle.o ./RenRenAPI/RenRenAPI_FeedGetFangle.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_FriendsAreFriends.o : ./RenRenAPI/RenRenAPI_FriendsAreFriends.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_FriendsAreFriends.o ./RenRenAPI/RenRenAPI_FriendsAreFriends.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_FriendsGetFriends.o : ./RenRenAPI/RenRenAPI_FriendsGetFriends.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_FriendsGetFriends.o ./RenRenAPI/RenRenAPI_FriendsGetFriends.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_FriendsSearch.o : ./RenRenAPI/RenRenAPI_FriendsSearch.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_FriendsSearch.o ./RenRenAPI/RenRenAPI_FriendsSearch.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_GuestbookGet.o : ./RenRenAPI/RenRenAPI_GuestbookGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_GuestbookGet.o ./RenRenAPI/RenRenAPI_GuestbookGet.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_GuestbookPost.o : ./RenRenAPI/RenRenAPI_GuestbookPost.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_GuestbookPost.o ./RenRenAPI/RenRenAPI_GuestbookPost.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_InitialLogin.o : ./RenRenAPI/RenRenAPI_InitialLogin.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_InitialLogin.o ./RenRenAPI/RenRenAPI_InitialLogin.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_MessageGet.o : ./RenRenAPI/RenRenAPI_MessageGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_MessageGet.o ./RenRenAPI/RenRenAPI_MessageGet.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_MessageGets.o : ./RenRenAPI/RenRenAPI_MessageGets.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_MessageGets.o ./RenRenAPI/RenRenAPI_MessageGets.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_PagesGetInfo.o : ./RenRenAPI/RenRenAPI_PagesGetInfo.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_PagesGetInfo.o ./RenRenAPI/RenRenAPI_PagesGetInfo.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_PagesGetList.o : ./RenRenAPI/RenRenAPI_PagesGetList.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_PagesGetList.o ./RenRenAPI/RenRenAPI_PagesGetList.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_PhotosGet.o : ./RenRenAPI/RenRenAPI_PhotosGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_PhotosGet.o ./RenRenAPI/RenRenAPI_PhotosGet.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_PhotosGetAlbums.o : ./RenRenAPI/RenRenAPI_PhotosGetAlbums.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_PhotosGetAlbums.o ./RenRenAPI/RenRenAPI_PhotosGetAlbums.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_PhotosGetComments.o : ./RenRenAPI/RenRenAPI_PhotosGetComments.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_PhotosGetComments.o ./RenRenAPI/RenRenAPI_PhotosGetComments.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_Profile.o : ./RenRenAPI/RenRenAPI_Profile.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_Profile.o ./RenRenAPI/RenRenAPI_Profile.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_RequestsGetFriendRequests.o : ./RenRenAPI/RenRenAPI_RequestsGetFriendRequests.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_RequestsGetFriendRequests.o ./RenRenAPI/RenRenAPI_RequestsGetFriendRequests.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_StatusGet.o : ./RenRenAPI/RenRenAPI_StatusGet.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_StatusGet.o ./RenRenAPI/RenRenAPI_StatusGet.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_StatusGetComment.o : ./RenRenAPI/RenRenAPI_StatusGetComment.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_StatusGetComment.o ./RenRenAPI/RenRenAPI_StatusGetComment.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_UsersGetEvent.o : ./RenRenAPI/RenRenAPI_UsersGetEvent.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_UsersGetEvent.o ./RenRenAPI/RenRenAPI_UsersGetEvent.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_UsersGetInfo.o : ./RenRenAPI/RenRenAPI_UsersGetInfo.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_UsersGetInfo.o ./RenRenAPI/RenRenAPI_UsersGetInfo.cpp
+
+$(OBJECTS_DIR)/RenRenAPI_UsersGetVisitors.o : ./RenRenAPI/RenRenAPI_UsersGetVisitors.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPI_UsersGetVisitors.o ./RenRenAPI/RenRenAPI_UsersGetVisitors.cpp
+
+$(OBJECTS_DIR)/RenRenAPICommon.o : ./RenRenAPI/RenRenAPICommon.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/RenRenAPICommon.o ./RenRenAPI/RenRenAPICommon.cpp
+
+$(OBJECTS_DIR)/cJSON.o : ./Util/cJSON.c
+	$(CC) -c $(CC_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/cJSON.o ./Util/cJSON.c
+
+$(OBJECTS_DIR)/cUnixTime.o : ./Util/cUnixTime.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/cUnixTime.o ./Util/cUnixTime.cpp
+
+$(OBJECTS_DIR)/gui_common.o : ./Util/gui_common.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/gui_common.o ./Util/gui_common.cpp
+
+$(OBJECTS_DIR)/md5c.o : ./Util/md5c.c
+	$(CC) -c $(CC_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/md5c.o ./Util/md5c.c
+
+$(OBJECTS_DIR)/OtherComm.o : ./Util/OtherComm.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/OtherComm.o ./Util/OtherComm.cpp
+
+$(OBJECTS_DIR)/StrComm.o : ./Util/StrComm.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/StrComm.o ./Util/StrComm.cpp
+
+$(OBJECTS_DIR)/TDownload.o : ./Util/TDownload.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/TDownload.o ./Util/TDownload.cpp
+
+$(OBJECTS_DIR)/TFileDownloadMrg.o : ./Util/TFileDownloadMrg.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/TFileDownloadMrg.o ./Util/TFileDownloadMrg.cpp
+
+$(OBJECTS_DIR)/TGlobal.o : ./Util/TGlobal.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/TGlobal.o ./Util/TGlobal.cpp
+
+$(OBJECTS_DIR)/TImgData.o : ./Util/TImgData.cpp
+	$(CXX) -c $(CXX_FLAGS) $(INCLUDE_PATH) $(LAST_INCLUDE_PATH) -o $(OBJECTS_DIR)/TImgData.o ./Util/TImgData.cpp
+

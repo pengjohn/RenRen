@@ -1,0 +1,15 @@
+<XMLFeedGetFangle_Array>
+  <Root xmlns="..0.">
+    <source_id xmlns="Number.source_id.0.source_id" />
+    <actor_id xmlns="Number.actor_id.0.actor_id" />
+    <name xmlns="String.name.128.name" />
+    <time xmlns="String.time.255.time" />
+    <prefix xmlns="String.prefix.255.prefix" />
+    <title xmlns="String.title.256.title" />
+    <href xmlns="String.href.256.href" />
+    <sufix xmlns="String.sufix.255.sufix" />
+    <type xmlns="Number.type.0.type" />
+    <object_id xmlns="Number.object_id.0.object_id" />
+    <owner_id xmlns="Number.owner_id.0.owner_id" />
+  </Root>
+</XMLFeedGetFangle_Array>

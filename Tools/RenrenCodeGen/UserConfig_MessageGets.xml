@@ -1,0 +1,16 @@
+<XMLMessageGets>
+  <Root xmlns="..0.">
+    <unread_count xmlns="Number.unread_count.0.unread_count" />
+    <count xmlns="Number.count.0.count" />
+    <messages xmlns="Array.messages.0.messages">
+      <id xmlns="Number.id.0.id" />
+      <uid xmlns="Number.uid.0.uid" />
+      <name xmlns="String.name.128.name" />
+      <head_ur xmlns="String.head_ur.256.head_url" />
+      <time xmlns="String.time.64.time" />
+      <title xmlns="String.title.128.title" />
+      <content xmlns="String.content.256.content" />
+      <is_read xmlns="Number.is_read.0.is_read" />
+    </messages>
+  </Root>
+</XMLMessageGets>

@@ -1,0 +1,7 @@
+<XMLFriendsAreFriends_Array>
+  <Root xmlns="..0.">
+    <uid1 xmlns="Number.uid1.0.uid1" />
+    <uid2 xmlns="Number.uid2.0.uid2" />
+    <are_friends xmlns="Number.are_friends.0.are_friends" />
+  </Root>
+</XMLFriendsAreFriends_Array>

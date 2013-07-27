@@ -1,0 +1,12 @@
+<XMLPhotosGetComments_Array>
+  <Root xmlns="..0.">
+    <uid xmlns="Number.uid.0.uid" />
+    <name xmlns="String.name.64.name" />
+    <headurl xmlns="String.headurl.256.headurl" />
+    <comment_id xmlns="Number.comment_id.0.comment_id" />
+    <time xmlns="String.time.64.time" />
+    <text xmlns="String.text.1024.text" />
+    <is_whisper xmlns="Number.is_whisper.0.is_whisper" />
+    <source xmlns="String.source.256.source" />
+  </Root>
+</XMLPhotosGetComments_Array>

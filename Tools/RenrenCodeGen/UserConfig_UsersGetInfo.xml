@@ -1,0 +1,41 @@
+<XMLUsersGetInfo>
+  <Root xmlns="..0.">
+    <uid xmlns="Short.uid.0.uid" />
+    <name xmlns="String.name.32.name" />
+    <sex xmlns="Short.sex.0.sex" />
+    <star xmlns="Short.star.0.star" />
+    <zidou xmlns="Short.zidou.0.zidou" />
+    <birthday xmlns="String.birthday.64.birthday" />
+    <email_hash xmlns="String.email_hash.256.email_hash" />
+    <tinyurl xmlns="String.tinyurl.256.tinyurl" />
+    <headurl xmlns="String.headurl.256.headurl" />
+    <mainurl xmlns="String.mainurl.256.mainurl" />
+    <hometown_location xmlns="Array.hometown_location.0.hometown_location">
+      <country xmlns="String.country.32.country" />
+      <province xmlns="String.province.32.province" />
+      <city xmlns="String.city.32.city" />
+    </hometown_location>
+    <work_history xmlns="Array.work_history.0.work_history">
+      <company_name xmlns="String.company_name.64.company_name" />
+      <description xmlns="String.description.256.description" />
+      <start_date xmlns="String.start_date.64.start_date" />
+      <end_date xmlns="String.end_date.64.end_date" />
+    </work_history>
+    <university_history xmlns="Array.university_history.0.university_history">
+      <name xmlns="String.name.64.name" />
+      <year xmlns="Short.year.0.year" />
+      <department xmlns="String.department.128.department" />
+    </university_history>
+    <hs_history xmlns="Array.hs_history.0.hs_history">
+      <name xmlns="String.name.64.name" />
+      <grad_year xmlns="Short.grad_year.0.grad_year" />
+    </hs_history>
+    <contact_info xmlns="Array.contact_info.0.contact_info">
+      <msn xmlns="String.msn.128.msn" />
+      <mobile_tel xmlns="String.mobile_tel.64.mobile_tel" />
+      <telephone xmlns="String.telephone.64.telephone" />
+      <web_site xmlns="String.web_site.128.web_site" />
+      <qq xmlns="String.qq.64.qq" />
+    </contact_info>
+  </Root>
+</XMLUsersGetInfo>
